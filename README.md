@@ -72,8 +72,6 @@ A modern React-based portfolio generator that empowers users to create professio
 3. Click on "Edit Portfolio" to make changes
 4. Save your changes to update your portfolio
 
-## Deployment
-
 ### Deploying to Replit
 
 This application is designed to work seamlessly on Replit:

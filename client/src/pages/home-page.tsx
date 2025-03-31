@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import "./home.css"
 import heroImage from "@/uploads/builder.png";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+// import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function HomePage() {
   const { user } = useAuth();
@@ -152,11 +152,11 @@ export default function HomePage() {
           </div>
           <div className="md:w-1/2 relative">
             {/* <img src={heroImage} alt="Hero" className="w-full" /> */}
-            <DotLottieReact
+            {/* <DotLottieReact
       src="https://lottie.host/6334ce49-1827-4e32-91b4-fb26f0733f77/ep0KD8KdiQ.lottie"
       loop
       autoplay
-    />
+    /> */}
             {/* <div className="bg-white p-6 rounded-lg shadow-xl">
               <div className="aspect-video bg-slate-100 rounded-md mb-4"></div>
               <div className="h-6 bg-slate-100 rounded-full w-3/4 mb-3"></div>
