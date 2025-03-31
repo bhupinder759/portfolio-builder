@@ -175,7 +175,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text">Key Features</h2>
             <p className="mt-4 text-lg text-white max-w-2xl mx-auto">
-              Everything you need to create a stunning portfolio
+              Everything you need to create a stunning portfolio.
             </p>
           </div>
           
