@@ -1,27 +1,34 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
-import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { fileURLToPath } from "url";
+import { dirname, resolve } from "path";
 
-const rootDir = process.cwd();
+// Ensure compatibility with Windows and ESM modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [
     react(),
-    runtimeErrorOverlay(),
+    tsconfigPaths(), // Ensures TypeScript path aliases work
     themePlugin(),
+    ...(process.env.NODE_ENV !== "production" ? [runtimeErrorOverlay()] : []),
   ],
   resolve: {
     alias: {
-      "@": path.resolve(rootDir, "client", "src"),
-      "@shared": path.resolve(rootDir, "shared"),
-      "@assets": path.resolve(rootDir, "attached_assets"),
+      "@": resolve(__dirname, "client", "src"),
+      "@shared": resolve(__dirname, "shared"),
+      "@assets": resolve(__dirname, "attached_assets"),
     },
   },
-  root: path.resolve(rootDir, "client"),
+  root: resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(rootDir, "dist/public"),
+    outDir: resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
 });
+
+//  last
