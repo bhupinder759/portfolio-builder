@@ -28,7 +28,21 @@ export default defineConfig({
   build: {
     outDir: resolve(__dirname, "dist/public"),
     emptyOutDir: true,
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]",
+      },
+    },
+  },
+  server: {
+    port: 5173,
+    strictPort: true,
+    open: true,
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
   },
 });
-
-//  last
